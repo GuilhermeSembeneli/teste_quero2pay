@@ -2,7 +2,7 @@ import { ResultMovie } from "services/movies/interface";
 import { ModalProps } from "../interface";
 
 export interface ModalInformationMovieProps extends ModalProps {
-  item: ResultMovie;
+  item?: ResultMovie;
 }
 
 export interface ContentListProps {

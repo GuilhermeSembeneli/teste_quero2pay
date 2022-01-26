@@ -62,13 +62,11 @@ export default function Home({ data }: ResponseMovies) {
   console.log(data);
   return (
     <>
-      {movieModal?.title && (
-        <ModalInformationMovie
-          visible={visible}
-          onClose={() => setVisible(false)}
-          item={movieModal}
-        />
-      )}
+      <ModalInformationMovie
+        visible={visible}
+        onClose={() => setVisible(false)}
+        item={movieModal}
+      />
       <Container>
         <SectionHome>
           <MoviesList>
