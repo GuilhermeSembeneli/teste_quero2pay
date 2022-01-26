@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
     :root{         
         --font-display: 'Montserrat', 'Arial';
@@ -8,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
         --color-primary: #256DB1;
         --text-color-white: #FFFFFF;
         --background-color:  rgb(241, 241, 241);
+        --color-blue-cyan-100: rgba(9, 25, 54, 0.65);
+        --color-blue-cyan: rgb(9, 25, 54);
     }
 
     * {
@@ -16,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    #__next {
+        position: relative;
+        min-height: 100%
+    }
 
     //padrão da aplicação : 16px
     html {
@@ -26,11 +31,15 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 720px){
             font-size: 87.5%; //calculo 16px*.875 = 14px
         }
+        height: 100%;
+        min-height: 100%;
     }
 
     body {
         font-family: var(--font-display);
         background-color: var(--background-color);
         overflow-x: hidden;
+        height: 100%;
+        min-height: 100%;
     }
 `;

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const MoviesBox = styled.div`    
-    img {
-        border-radius: 5px;
-        width: 100px;
-        height: 120px;
-        object-fit: fill;
-    }
+export const MoviesBox = styled.div`
+  cursor: pointer;
+  img {
+    border-radius: 5px;
+    width: 164px;
+    height: 200px;
+    object-fit: fill;
+  }
 `;

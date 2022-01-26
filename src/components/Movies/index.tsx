@@ -1,15 +1,22 @@
-import { IResultsProps } from 'interfaces/Pages/home'
-import React from 'react'
-import { MoviesBox } from './style'
+import { ModalInformationMovie } from "components/Modal/ModalInformationMovie";
+import React, { useState } from "react";
+import { ResultMovie } from "services/movies/interface";
+import { MoviesBox } from "./style";
 
 interface IMovies {
-    item: IResultsProps
+  item: ResultMovie;
+  onClick: (item: ResultMovie) => void;
 }
 
-export default function Movies({item}: IMovies) {
-    return (
-        <MoviesBox>
-            <img src={`http://image.tmdb.org/t/p/w185/${item.poster_path}`} alt={item.backdrop_path} />
-        </MoviesBox>
-    )
+export default function Movies({ item, onClick }: IMovies) {
+  return (
+    <>
+      <MoviesBox onClick={() => onClick(item)}>
+        <img
+          src={`http://image.tmdb.org/t/p/w185/${item.poster_path}`}
+          alt={item.backdrop_path}
+        />
+      </MoviesBox>
+    </>
+  );
 }
