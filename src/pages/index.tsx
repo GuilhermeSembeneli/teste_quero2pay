@@ -13,6 +13,7 @@ import { getMovies } from "services/movies/requests";
 import { ResponseMovies, ResultMovie } from "services/movies/interface";
 import { PaginationState } from "components/Pagination/interface";
 import { ModalInformationMovie } from "components/Modal/ModalInformationMovie";
+import Head from "next/head";
 
 export default function Home({ data }: ResponseMovies) {
   const [visible, setVisible] = useState(false);
@@ -62,6 +63,9 @@ export default function Home({ data }: ResponseMovies) {
 
   return (
     <>
+      <Head>
+        <title>Quero 2 Ingressos | Filmes em Cartaz</title>
+      </Head>
       <ModalInformationMovie
         visible={visible}
         onClose={() => setVisible(false)}
