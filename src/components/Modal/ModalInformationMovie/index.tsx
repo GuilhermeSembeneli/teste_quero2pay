@@ -16,16 +16,18 @@ export const ModalInformationMovie: React.FC<ModalInformationMovieProps> = ({
 }) => {
   return (
     <Modal visible={visible} onClose={onClose} blockScroll>
-      <ContainerMovieModal>
-        <HeaderMovie>
-          <TitleMovie>{item?.title}</TitleMovie>
-          <DescriptionMovie>{item?.overview}</DescriptionMovie>
-        </HeaderMovie>
+      {item && (
+        <ContainerMovieModal>
+          <HeaderMovie>
+            <TitleMovie>{item?.title}</TitleMovie>
+            <DescriptionMovie>{item?.overview}</DescriptionMovie>
+          </HeaderMovie>
 
-        <FooterInformation>
-          <p>Lançamento: {formatterDateAPI(item?.release_date)}</p>
-        </FooterInformation>
-      </ContainerMovieModal>
+          <FooterInformation>
+            <p>Lançamento: {formatterDateAPI(item?.release_date)}</p>
+          </FooterInformation>
+        </ContainerMovieModal>
+      )}
     </Modal>
   );
 };

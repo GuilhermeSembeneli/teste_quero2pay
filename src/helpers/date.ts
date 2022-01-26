@@ -10,6 +10,7 @@ export const formatterDate = (dateString: string) => {
 };
 
 export const formatterDateAPI = (dateString: string) => {
+  if (!dateString) return "";
   const [year, month, day] = dateString.split("-");
 
   return `${day}/${month}/${year}`;
