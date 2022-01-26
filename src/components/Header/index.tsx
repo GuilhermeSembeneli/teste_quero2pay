@@ -1,20 +1,22 @@
-import React from 'react'
-import Input from 'components/Input'
-import { ContainerHeader, QueroTwo } from './style'
-
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import { ContainerHeader, QueroTwo } from "./style";
 
 export default function Header() {
-    return (
-        <ContainerHeader>
-            <section>
-                <QueroTwo>
-                    <h5>Quero</h5>
-                    <span>2</span>
-                    <strong>Ingressos</strong>
-                </QueroTwo>
-            </section>
-        </ContainerHeader>
-    )
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  return (
+    <ContainerHeader>
+      <section>
+        <QueroTwo onClick={goToTop}>
+          <h5>Quero</h5>
+          <span>2</span>
+          <strong>Ingressos</strong>
+        </QueroTwo>
+      </section>
+    </ContainerHeader>
+  );
 }
