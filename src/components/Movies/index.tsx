@@ -16,6 +16,9 @@ export default function Movies({ item, onClick }: IMovies) {
           src={`http://image.tmdb.org/t/p/w185/${item.poster_path}`}
           alt={item.backdrop_path}
         />
+        <div className="about-more">
+          <p>Saiba mais</p>
+        </div>
       </MoviesBox>
     </>
   );

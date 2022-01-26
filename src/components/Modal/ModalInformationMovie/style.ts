@@ -28,9 +28,23 @@ export const FooterInformation = styled.footer`
   position: absolute;
   bottom: 15px;
 
+  p:first-child {
+    margin-bottom: 0.5rem;
+  }
+
+  P:last-child {
+    display: flex;
+    align-items: flex-start;
+    
+    gap: 0.5rem;
+    img {
+      width: 1rem;
+    }
+  }
+
   p {
+    text-align: left;
     font-size: 1rem;
-    text-align: center;
     color: var(--color-blue-cyan);
   }
 `;
