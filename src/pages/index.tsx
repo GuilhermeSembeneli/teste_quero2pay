@@ -59,7 +59,7 @@ export default function Home({ data }: ResponseMovies) {
   useEffect(() => {
     fetchMovies();
   }, [fetchMovies]);
-  console.log(data);
+
   return (
     <>
       <ModalInformationMovie
