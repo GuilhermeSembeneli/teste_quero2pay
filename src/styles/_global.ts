@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
         
         --color-primary: #256DB1;
         --color-blue-white: #2D6FE0;
+        --color-danger: #c23f3b;
         --color-border-cyan: #BCBFC4;
         --color-title:  rgba(9,25,54,0.85);
         --color-blue-cyan: rgb(9, 25, 54);

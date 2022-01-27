@@ -62,3 +62,11 @@ export const ButtonStyle = styled.button<ButtonProps>`
       max-width: ${props?.customWidth || ""};
     `}
 `;
+
+export const CustomSpanMessage = styled.span`
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--color-danger);
+`;

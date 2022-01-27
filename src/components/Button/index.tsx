@@ -1,6 +1,11 @@
 import { ButtonProps } from "./interface";
-import { ButtonStyle } from "./style";
+import { ButtonStyle, CustomSpanMessage } from "./style";
 
-export const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
-  return <ButtonStyle {...rest}>{children}</ButtonStyle>;
+export const Button: React.FC<ButtonProps> = ({ children, customMessage, ...rest }) => {
+  return (
+    <>
+      <ButtonStyle {...rest}>{children}</ButtonStyle>
+      {customMessage && <CustomSpanMessage>{customMessage}</CustomSpanMessage>}
+    </>
+  );
 };

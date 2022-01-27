@@ -10,5 +10,6 @@ export interface ButtonProps {
   maxWidth?: boolean;
   disabled?: boolean;
   white?: boolean;
+  customMessage?: string;
   onClick?: () => void;
 }

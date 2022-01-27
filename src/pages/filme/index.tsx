@@ -50,7 +50,7 @@ const MovieView: React.FC<MovieViewProps> = ({
                   ))}
                 </p>
               )}
-              <Button disabled top={15} bottom={15} maxWidth>
+              <Button disabled top={15} bottom={15} maxWidth customMessage="Indisponível no momento">
                 Alugar {movie?.title} por 9.99R$
               </Button>
             </div>
