@@ -65,4 +65,11 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
 
+    .Toastify__toast-body {
+        font-family: var(--font-display);
+        color: var(--color-white-100);
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 20px;
+    }
 `;

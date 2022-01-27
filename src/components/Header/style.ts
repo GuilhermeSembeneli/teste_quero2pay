@@ -42,3 +42,17 @@ export const QueroTwo = styled.div`
     text-transform: uppercase;
   }
 `;
+
+export const Navigation = styled.nav`
+  position: absolute;
+  right: 1rem;
+
+  ul,
+  li,
+  a {
+    list-style: none;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--text-color-white);
+  }
+`;
