@@ -68,25 +68,27 @@ const RentMovie: React.FC<RentMovieProps> = ({
             </div>
           </ArticleInformation>
 
-          <ArticleYT>
-            <TitleMovie>Trailer {movie?.title}</TitleMovie>
-            <GlobalContainerSlider>
-              <SliderContainer
-                as={Slider}
-                prevArrow={<Arrow />}
-                nextArrow={<Arrow />}
-                {...settings}
-              >
-                {moviesTrailer?.map((movieTrailer) => (
-                  <div key={movieTrailer?.key}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${movieTrailer.key}`}
-                    />
-                  </div>
-                ))}
-              </SliderContainer>
-            </GlobalContainerSlider>
-          </ArticleYT>
+          {!!moviesTrailer?.length && (
+            <ArticleYT>
+              <TitleMovie>Trailer {movie?.title}</TitleMovie>
+              <GlobalContainerSlider>
+                <SliderContainer
+                  as={Slider}
+                  prevArrow={<Arrow />}
+                  nextArrow={<Arrow />}
+                  {...settings}
+                >
+                  {moviesTrailer?.map((movieTrailer) => (
+                    <div key={movieTrailer?.key}>
+                      <iframe
+                        src={`https://www.youtube.com/embed/${movieTrailer.key}`}
+                      />
+                    </div>
+                  ))}
+                </SliderContainer>
+              </GlobalContainerSlider>
+            </ArticleYT>
+          )}
         </ContainerMovie>
       </ContainerPage>
     </>

@@ -46,6 +46,7 @@ export const Modal: React.FC<ModalProps> = ({
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
+      document.body.style.overflow = "auto";
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);

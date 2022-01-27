@@ -24,11 +24,11 @@ export const ArticleInformation = styled.article`
   @media screen and (min-width: 980px) {
     justify-content: space-between;
     div:first-child {
-      flex: 0 0 30%;
+      flex: 0 0 35%;
     }
     .movie-image {
       margin-bottom: 0;
-      flex: 0 0 70%;
+      flex: 0 0 65%;
     }
   }
 `;
@@ -46,6 +46,9 @@ export const DescriptionMovie = styled.p`
   line-height: 21px;
   color: var(--color-title);
   margin-bottom: 2rem;
+
+  max-height: 250px;
+  overflow: auto;
 `;
 
 export const ArticleYT = styled.article`
@@ -53,7 +56,7 @@ export const ArticleYT = styled.article`
   iframe {
     margin-top: 0.5rem;
     width: 100%;
-      min-height: 250px;
+    min-height: 250px;
     border-radius: 15px;
     border: none;
 
