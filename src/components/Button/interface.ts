@@ -8,6 +8,7 @@ export interface ButtonProps {
   right?: number;
   type?: "button" | "submit" | "reset";
   maxWidth?: boolean;
+  disabled?: boolean;
   white?: boolean;
   onClick?: () => void;
 }

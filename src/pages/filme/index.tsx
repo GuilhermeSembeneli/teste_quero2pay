@@ -1,5 +1,4 @@
 import { GetServerSideProps } from "next";
-import Slider from "react-slick";
 import Head from "next/head";
 
 import { getCookieData } from "services/cookies";
@@ -18,22 +17,15 @@ import {
   DescriptionMovie,
   TitleMovie,
 } from "styles/pages/Movie";
-import Arrow from "components/Arrow";
 
-import { GlobalContainerSlider, SliderContainer } from "styles/_global";
+import { Button } from "components/Button";
+import { SliderView } from "components/SliderView";
 
-export interface RentMovieProps extends ResponseDetailsMovies {
+export interface MovieViewProps extends ResponseDetailsMovies {
   moviesTrailer: VideoResponse[];
 }
-const settings = {
-  dots: true,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 
-const RentMovie: React.FC<RentMovieProps> = ({
+const MovieView: React.FC<MovieViewProps> = ({
   data: movie,
   moviesTrailer,
 }) => {
@@ -51,13 +43,16 @@ const RentMovie: React.FC<RentMovieProps> = ({
               <TitleMovie>{movie?.title}</TitleMovie>
               <DescriptionMovie>{movie?.overview}</DescriptionMovie>
               {!!stars?.length && (
-                <p className="stars-avaliate">
+                <p className="stars-avaliate MovieView">
                   Avaliação:
                   {stars?.map((star, index) => (
                     <img src={star} alt="Estrela" key={index} />
                   ))}
                 </p>
               )}
+              <Button disabled top={15} bottom={15} maxWidth>
+                Alugar {movie?.title} por 9.99R$
+              </Button>
             </div>
 
             <div className="movie-image">
@@ -71,22 +66,15 @@ const RentMovie: React.FC<RentMovieProps> = ({
           {!!moviesTrailer?.length && (
             <ArticleYT>
               <TitleMovie>Trailer {movie?.title}</TitleMovie>
-              <GlobalContainerSlider>
-                <SliderContainer
-                  as={Slider}
-                  prevArrow={<Arrow />}
-                  nextArrow={<Arrow />}
-                  {...settings}
-                >
-                  {moviesTrailer?.map((movieTrailer) => (
-                    <div key={movieTrailer?.key}>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${movieTrailer.key}`}
-                      />
-                    </div>
-                  ))}
-                </SliderContainer>
-              </GlobalContainerSlider>
+              <SliderView>
+                {moviesTrailer?.map((movieTrailer) => (
+                  <div key={movieTrailer?.key}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${movieTrailer.key}`}
+                    />
+                  </div>
+                ))}
+              </SliderView>
             </ArticleYT>
           )}
         </ContainerMovie>
@@ -122,4 +110,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 };
 
-export default RentMovie;
+export default MovieView;

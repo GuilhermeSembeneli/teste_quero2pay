@@ -35,6 +35,11 @@ export const ButtonStyle = styled.button<ButtonProps>`
     filter: brightness(0.9);
   }
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   ${(props) =>
     props?.white &&
     css`
