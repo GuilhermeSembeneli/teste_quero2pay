@@ -1,3 +1,4 @@
+import { Button } from "components/Button";
 import { ModalInformationMovie } from "components/Modal/ModalInformationMovie";
 import React, { useState } from "react";
 import { ResultMovie } from "services/movies/interface";
@@ -14,10 +15,10 @@ export default function Movies({ item, onClick }: IMovies) {
       <MoviesBox onClick={() => onClick(item)}>
         <img
           src={`http://image.tmdb.org/t/p/w185/${item.poster_path}`}
-          alt={item.backdrop_path}
+          alt={item.title}
         />
         <div className="about-more">
-          <p>Saiba mais</p>
+          <Button>Saiba Mais</Button>
         </div>
       </MoviesBox>
     </>

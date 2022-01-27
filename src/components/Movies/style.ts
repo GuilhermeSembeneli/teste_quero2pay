@@ -13,36 +13,33 @@ export const MoviesBox = styled.div`
 
   .about-more {
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
 
     width: 100%;
     padding: 0.3rem;
 
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     transition: all 0.15s ease-in-out;
 
-    p {
-      text-align: center;
-      color: var(--text-color-white);
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-  }
-
-  &:hover {
-    .about-more {
-      opacity: 1;
-    }
+    text-align: center;
   }
 
   @media screen and (min-width: 980px) {
     img {
       width: 164px;
       height: 200px;
+    }
+
+    .about-more {
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      .about-more {
+        opacity: 1;
+      }
     }
   }
 `;

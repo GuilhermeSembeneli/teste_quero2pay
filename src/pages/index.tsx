@@ -1,11 +1,15 @@
+import Head from "next/head";
+import Image from "next/image";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
   MoviesList,
   Container,
   SectionHome,
   ContainerPagination,
+  AboutRent,
 } from "styles/pages/Home";
 import { GetStaticProps } from "next";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Movies from "components/Movies";
 import { Pagination } from "components/Pagination";
 import ScrollContainer from "react-indiana-drag-scroll";
@@ -13,7 +17,9 @@ import { getMovies } from "services/movies/requests";
 import { ResponseMovies, ResultMovie } from "services/movies/interface";
 import { PaginationState } from "components/Pagination/interface";
 import { ModalInformationMovie } from "components/Modal/ModalInformationMovie";
-import Head from "next/head";
+
+import RentImage from "/public/images/want2Rent.png";
+import { setCookieData } from "services/cookies";
 
 export default function Home({ data }: ResponseMovies) {
   const [visible, setVisible] = useState(false);
@@ -48,6 +54,10 @@ export default function Home({ data }: ResponseMovies) {
     setVisible(true);
   };
 
+  const handleAddProduct = (item: ResultMovie) => {
+    setCookieData("productId", item?.id);
+  };
+
   const fetchMovies = useCallback(async () => {
     try {
       const { data: response } = await getMovies(pagination?.current_page);
@@ -64,15 +74,30 @@ export default function Home({ data }: ResponseMovies) {
   return (
     <>
       <Head>
-        <title>Quero 2 Ingressos | Filmes em Cartaz</title>
+        <title>Quero 2 Aluga | Filmes em Cartaz</title>
       </Head>
       <ModalInformationMovie
+        onClickRent={handleAddProduct}
         visible={visible}
         onClose={() => setVisible(false)}
         item={movieModal}
       />
       <Container>
         <SectionHome>
+          <AboutRent>
+            <div>
+              <h4>Filmes por apenas 9.99R$!</h4>
+              <p>
+                {" "}
+                Alugue seus filmes no conforto de sua casa, sem precisar
+                <br />
+                sair de casa!
+              </p>
+            </div>
+
+            <Image src={RentImage} alt="Quero 2 ingresso" />
+          </AboutRent>
+
           <MoviesList>
             <div className="create-title-decoration">
               <span></span>

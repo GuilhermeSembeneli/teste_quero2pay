@@ -10,12 +10,31 @@ export const Container = styled.main`
 export const SectionHome = styled.section`
   margin: auto 0px;
   margin-top: 6rem;
-  
+
   width: 90%;
   @media screen and (min-width: 1024px) {
-    margin: 3rem 0px auto;
-    max-width: 1024px;
+    margin: 6rem 0 auto;
+    max-width: 1038px;
     width: 90%;
+  }
+`;
+
+export const AboutRent = styled.article`
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+    color: var(--color-title);
+    font-family: var(--font-display);
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 21px;
+    color: var(--color-title);
+    margin-bottom: 2rem;
   }
 `;
 
@@ -48,8 +67,8 @@ export const MoviesList = styled.article`
   }
 
   .container-all-movies {
-    max-width: 1024px;
-    margin-top: 1rem;
+    max-width: 1038px;
+    margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;

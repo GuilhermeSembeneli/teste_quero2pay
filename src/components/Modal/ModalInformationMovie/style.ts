@@ -27,19 +27,13 @@ export const ContainerMovieModal = styled.main``;
 export const FooterInformation = styled.footer`
   position: absolute;
   bottom: 15px;
+  width: 100%;
+  padding: 0 25px;
+  right: 30px;
+  left: 0;
 
   p:first-child {
     margin-bottom: 0.5rem;
-  }
-
-  P:last-child {
-    display: flex;
-    align-items: flex-start;
-    
-    gap: 0.5rem;
-    img {
-      width: 1rem;
-    }
   }
 
   p {
@@ -47,4 +41,13 @@ export const FooterInformation = styled.footer`
     font-size: 1rem;
     color: var(--color-blue-cyan);
   }
+`;
+
+export const FlexItemsButton = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 `;
