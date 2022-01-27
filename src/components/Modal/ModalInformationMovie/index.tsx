@@ -24,7 +24,7 @@ export const ModalInformationMovie: React.FC<ModalInformationMovieProps> = ({
             <TitleMovie>{item?.title}</TitleMovie>
             <DescriptionMovie>
               {item?.overview ||
-                `Nenhuma descrição de ${item?.title} foi encontrado.`}
+                `Nenhuma descrição de "${item?.title}" foi encontrado.`}
             </DescriptionMovie>
           </HeaderMovie>
 
